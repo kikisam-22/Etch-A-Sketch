@@ -9,13 +9,13 @@ function createDivs(numberOfRows, numberOfColumns) {
         gridNumberOfRows = document.createElement("div");
         gridNumberOfRows.classList.add("row");
         gridNumberOfRows.setAttribute("id",`row-${numberOfRows}`);
-        gridNumberOfRows.style.cssText = "border:2px solid black; height:50px; width:50px";
+        gridNumberOfRows.style.flex="auto";
         gridContainer.appendChild(gridNumberOfRows);
         for (numberOfColumns--; numberOfColumns>0; numberOfColumns--){
             gridNumberOfColumns = document.createElement("div");
             gridNumberOfColumns.classList.add("column");
             gridNumberOfColumns.setAttribute("id", `row-${numberOfRows}-column-${numberOfColumns}`);
-            gridNumberOfColumns.style.cssText = "border:2px solid black; height:50px; width:50px"
+            gridNumberOfColumns.style.flex="auto"
             gridContainer.appendChild(gridNumberOfColumns);
         }
         numberOfColumns = 16;
