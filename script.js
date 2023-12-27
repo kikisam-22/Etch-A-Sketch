@@ -1,39 +1,23 @@
 const gridContainer = document.querySelector("#grid-container");
-let gridNumberOfColumns;
-let gridNumberOfRows;
+let gridSize = 16;
 
-function createDivs(numberOfRows, numberOfColumns) {
-    numberOfColumns = 16;
-    numberOfRows = 16;
-    for (numberOfRows; numberOfRows>0; numberOfRows--) {
-        gridNumberOfRows = document.createElement("div");
-        gridNumberOfRows.classList.add("row");
-        gridNumberOfRows.setAttribute("id",`row-${numberOfRows}`);
-        gridNumberOfRows.style.flex="auto";
-        gridContainer.appendChild(gridNumberOfRows);
-        for (numberOfColumns--; numberOfColumns>0; numberOfColumns--){
-            gridNumberOfColumns = document.createElement("div");
-            gridNumberOfColumns.classList.add("column");
-            gridNumberOfColumns.setAttribute("id", `row-${numberOfRows}-column-${numberOfColumns}`);
-            gridNumberOfColumns.style.flex="auto"
-            gridContainer.appendChild(gridNumberOfColumns);
+function createDivs(gridSize) {
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; i++){
+            const gridSquare = document.createElement("div");
+            gridSquare.classList.add("grid-square");
+            gridSquare.setAttribute("id", `row-${i}-column-${j}`);
+            gridSquare.style.flex="1"
+            gridContainer.appendChild(gridSquare);
         }
-        numberOfColumns = 16;
     }
 }
-createDivs()
+createDivs(gridSize)
 
-const rowDivs = document.querySelectorAll(".row");
-const columnDivs = document.querySelectorAll(".column");
+const gridSquares = document.querySelectorAll(".grid-square");
 
-rowDivs.forEach((row) => {
-    row.addEventListener("mouseover", () => {
-        row.classList.add("hovered")
-    })
-})
-
-columnDivs.forEach((column)=>{
-    column.addEventListener("mouseover", () => {
-        column.classList.add("hovered")
+gridSquares.forEach((square) => {
+    square.addEventListener("mouseover", () => {
+        square.classList.add("hovered")
     })
 })
