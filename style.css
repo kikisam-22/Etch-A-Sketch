@@ -1,5 +1,8 @@
 body{
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #grid-container{
@@ -10,4 +13,8 @@ body{
     align-items: center;
     height: 850px;
     width: 900px;
+}
+
+.hovered{
+    background-color: black;
 }
