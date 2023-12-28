@@ -1,17 +1,19 @@
 const gridContainer = document.querySelector("#grid-container");
-let gridSize = 16;
+let gridSize = 32;
 
 function createDivs(gridSize) {
     for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; i++){
+        for (let j = 0; j < gridSize; j++){
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
             gridSquare.setAttribute("id", `row-${i}-column-${j}`);
-            gridSquare.style.cssText="flex:0 0 calc(100%/gridSize), box-sizing: border-box, border: 1px solid gray"
             gridContainer.appendChild(gridSquare);
         }
     }
 }
+
+document.documentElement.style.setProperty('--gridSize', gridSize);
+
 createDivs(gridSize)
 
 const gridSquares = document.querySelectorAll(".grid-square");
@@ -21,3 +23,4 @@ gridSquares.forEach((square) => {
         square.classList.add("hovered")
     })
 })
+
