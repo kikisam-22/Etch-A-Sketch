@@ -12,20 +12,49 @@ h1 {
     color: white;
 }
 
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 1500px;
+}
+
+.round{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+button{
+    height: 80px;
+    width : 200px;
+    border-radius: 18px;
+}
+
+#parameters{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap : 30px;
+    height: 800px;
+}
+
 #grid-container {
     margin: auto;
     display: flex;
     justify-content: space-evenly;
     gap: 0px;
     flex-wrap: wrap;
-    height: 600px;
-    width: 600px;
+    height: 960px;
+    width: 960px;
     border: 10px solid gray;
 }
 
 .grid-square{
     --gridSize: 16;
-    flex:0 0 calc(100% / var(--gridSize));
+    flex:1 1 calc(100% / var(--gridSize));
     box-sizing: border-box;
 }
 

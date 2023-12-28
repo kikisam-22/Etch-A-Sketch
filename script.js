@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector("#grid-container");
-let gridSize = 32;
+let gridSize = 1;
 
 function createDivs(gridSize) {
     for (let i = 0; i < gridSize; i++) {
