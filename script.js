@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector("#grid-container");
-let gridSize = 1;
+let gridSize = 16;
 
 function createDivs(gridSize) {
     for (let i = 0; i < gridSize; i++) {
@@ -24,3 +24,17 @@ gridSquares.forEach((square) => {
     })
 })
 
+function chooseButton(buttonNumber) {
+    const button = document.getElementById("button" + buttonNumber);
+
+    const isChosen = button.classList.contains("chosen");
+
+    for (let i = 1; i <= 4; i++){
+        const otherButton = document.getElementById("button" + i);
+        otherButton.classList.remove("chosen");
+    }
+    
+    if (!isChosen){
+        button.classList.add("chosen")
+    }
+}
