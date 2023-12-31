@@ -16,7 +16,8 @@
             <button id="button2" onclick="chooseButton(2); activeRainbowMode()">Rainbow Mode </button>
             <button id="button3" onclick="chooseButton(3); activeEraseMode()">Erase Mode</button>
             <button id="button4" onclick="chooseButton(4); resetAll()">Reset All</button>
-            <input type="range"/>
+            <div id="range-chosen"></div>
+            <input type="range" id="myrange" min="1" max="64" step="1" value="16"/>
         </div>
         <div id="grid-container"></div>
     </div>

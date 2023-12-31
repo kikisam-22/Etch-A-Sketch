@@ -53,8 +53,8 @@ button{
 }
 
 .grid-square{
-    --gridSize: 16;
-    flex:1 1 calc(100% / var(--gridSize));
+    --valueOfRange : 16;
+    flex:1 1 calc(100% / var(--valueOfRange));
     box-sizing: border-box;
 }
 

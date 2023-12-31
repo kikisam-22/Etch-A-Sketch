@@ -1,10 +1,24 @@
 const circle = document.querySelector(".round");
 const gridContainer = document.querySelector("#grid-container");
-let gridSize = 16;
+const rangeChosen = document.querySelector("#range-chosen");
+const range = document.getElementById("myrange");
+const resetButton = document.querySelector("#button4");
+const originalButton = document.querySelector("#button1");
+let valueOfRange = range.value;
 
-function createDivs(gridSize) {
-    for (let i = 0; i < gridSize; i++) {
-        for (let j = 0; j < gridSize; j++){
+rangeChosen.textContent=`${valueOfRange}x${valueOfRange}`;
+
+range.addEventListener("input", function() {
+    valueOfRange = this.value;
+    rangeChosen.textContent = `${valueOfRange}x${valueOfRange}`;
+    gridContainer.innerHTML = "";
+    createDivs(valueOfRange);     
+    document.documentElement.style.setProperty('--valueOfRange', valueOfRange);
+});
+
+function createDivs(whatRange) {
+    for (let i = 0; i < whatRange; i++) {
+        for (let j = 0; j < whatRange; j++){
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
             gridSquare.setAttribute("id", `row-${i}-column-${j}`);
@@ -13,9 +27,9 @@ function createDivs(gridSize) {
     }
 }
 
-document.documentElement.style.setProperty('--gridSize', gridSize);
+document.documentElement.style.setProperty('--valueOfRange', valueOfRange);
 
-createDivs(gridSize)
+createDivs(valueOfRange);
 
 const gridSquares = document.querySelectorAll(".grid-square");
 
@@ -73,21 +87,17 @@ function activeEraseMode(){
     if(document.getElementById("button3").classList.contains("active")) {
         updateSquareColor();
         circle.style.cssText = "background:"
-
     }
-
 }
 
 function resetAll(){
-    const resetButton = document.querySelector("#button4");
-    const orinalButton = document.querySelector("#button1");
     gridSquares.forEach((square) => {
         square.style.cssText="background-color: "
     });
     resetButton.classList.remove("active");
     resetButton.classList.remove("chosen");
-    orinalButton.classList.add("active");
-    orinalButton.classList.add("chosen");
+    originalButton.classList.add("active");
+    originalButton.classList.add("chosen");
     activeOriginalMode()    
 }
 
