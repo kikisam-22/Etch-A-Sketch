@@ -71,3 +71,8 @@ button{
     background-color : gray;
     color : white;
 }
+
+#range-chosen{
+    text-align: center;
+    font-size: 24px;
+}
