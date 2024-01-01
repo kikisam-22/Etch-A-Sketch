@@ -22,6 +22,8 @@ range.addEventListener("input", function() {
 function createDivs(valueOfRange) {
     gridContainer.innerHTML = "";
 
+    const squareSize = gridContainer.clientWidth / valueOfRange;
+
     for (let i = 0; i < valueOfRange; i++) {
         for (let j = 0; j < valueOfRange; j++){
             const gridSquare = document.createElement("div");
@@ -30,13 +32,12 @@ function createDivs(valueOfRange) {
             gridContainer.appendChild(gridSquare);
         }
     }
-    gridSquares = document.querySelectorAll(".grid-square");  
 
+    gridSquares = document.querySelectorAll(".grid-square");
+
+    document.documentElement.style.setProperty('--squareSize', squareSize);  
     addEventListener();
-
 }
-
-document.documentElement.style.setProperty('--valueOfRange', valueOfRange);
 
 createDivs(valueOfRange);
 

@@ -53,9 +53,10 @@ button{
 }
 
 .grid-square{
-    --valueOfRange : 16;
-    flex:1 1 calc(100% / var(--valueOfRange));
     box-sizing: border-box;
+    width : var(--squareSize);
+    height: var(--squareSize);
+    flex: 0 1 auto;
 }
 
 .footer{
