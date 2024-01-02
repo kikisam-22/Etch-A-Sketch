@@ -28,20 +28,21 @@ function createDivs(valueOfRange) {
         for (let j = 0; j < valueOfRange; j++){
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
-            gridSquare.classList.add("square-box");
-            const squareBox = document.querySelectorAll(".square-box");
-            squareBox.forEach((box) => {
-                box.style.width = squareSize + "px";
-                box.style.height = squareSize + "px";
-            });
             gridSquare.setAttribute("id", `row-${i}-column-${j}`);
             gridContainer.appendChild(gridSquare);
         }
     }
 
     gridSquares = document.querySelectorAll(".grid-square");
+    gridSquares.forEach((square) => {
+        square.style.width = squareSize + "px";
+        square.style.height = squareSize + "px";
+    });
 
-    document.documentElement.style.setProperty('--squareSize', squareSize);  
+    if (originalButton.classList.contains("chosen")){
+        //
+    } else {chooseButton(1)};
+    handleMouseOVer();
     addEventListener();
 }
 
@@ -69,6 +70,7 @@ function handleMouseOVer(){
         circle.style.cssText = "background:"
     }
 }
+
 
 function chooseButton(buttonNumber) {
     const button = document.getElementById("button" + buttonNumber);
