@@ -28,6 +28,12 @@ function createDivs(valueOfRange) {
         for (let j = 0; j < valueOfRange; j++){
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
+            gridSquare.classList.add("square-box");
+            const squareBox = document.querySelectorAll(".square-box");
+            squareBox.forEach((box) => {
+                box.style.width = squareSize + "px";
+                box.style.height = squareSize + "px";
+            });
             gridSquare.setAttribute("id", `row-${i}-column-${j}`);
             gridContainer.appendChild(gridSquare);
         }
@@ -54,12 +60,12 @@ function handleMouseOVer(){
     } else if (document.getElementById("button2").classList.contains("active")) {
         gridSquares.forEach((square) => {
             square.addEventListener("mouseover", () => {
-                square.style.cssText=`background-color : ${randomColor()} `
+                square.style.backgroundColor = `${randomColor()}`
             })
-        });
+         });
         circle.style.cssText = "background: rgb(255,0,0); background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,255,0,1) 50%, rgba(238,130,238,1) 100%);"
     } else if (document.getElementById("button3").classList.contains("active")) {
-        updateSquareColor();
+        updateSquareColor("white");
         circle.style.cssText = "background:"
     }
 }
@@ -92,7 +98,7 @@ function randomColor(){
 function updateSquareColor(color){
     gridSquares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            square.style.cssText=`background-color : ${color} `
+            square.style.backgroundColor = `${color}`
         })
     })
 }

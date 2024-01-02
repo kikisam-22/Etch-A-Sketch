@@ -43,6 +43,7 @@ button{
 
 #grid-container {
     margin: auto;
+    padding: 0;
     display: flex;
     justify-content: space-evenly;
     gap: 0px;
@@ -54,9 +55,7 @@ button{
 
 .grid-square{
     box-sizing: border-box;
-    width : var(--squareSize);
-    height: var(--squareSize);
-    flex: 0 1 auto;
+    flex: 1 1 auto;
 }
 
 .footer{
