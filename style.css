@@ -3,7 +3,19 @@
     padding: 0;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-around;
+}
+
 h1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex : 0 1 auto;
     padding: 10px;
     text-align: center;
     font-size: 100px;
@@ -13,18 +25,22 @@ h1 {
 }
 
 #main{
+    flex: 0 1 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 1500px;
+    width: 1000px;
+    gap : 30px;
 }
 
 .round{
+    align-self: center;
     border: 2px solid black;
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
 
 button{
@@ -35,10 +51,11 @@ button{
 
 #parameters{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-evenly;
     gap : 30px;
-    height: 800px;
+    height: 700px;
 }
 
 #grid-container {
@@ -48,8 +65,8 @@ button{
     justify-content: space-evenly;
     gap: 0px;
     flex-wrap: wrap;
-    height: 960px;
-    width: 960px;
+    height: 700px;
+    width: 700px;
     border: 10px solid gray;
 }
 
@@ -59,10 +76,12 @@ button{
 }
 
 .footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    justify-content: center;
     height: 20px;
     padding: 20px;
-    margin-top: 100px;
-    text-align: center;
     background-color: gray;
     color: white;
 }
